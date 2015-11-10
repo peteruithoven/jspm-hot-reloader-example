@@ -8,11 +8,11 @@ const upButton = document.getElementById('up');
 
 render();
 downButton.onclick = function() {
-	state.count -= 10;
+	state.count -= 1;
 	render();
 }
 upButton.onclick = function() {
-	state.count += 10;
+	state.count += 1;
 	render();
 }
 
