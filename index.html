@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="jspm_packages/system.js" charset="utf-8"></script>
+    <script src="config.js" charset="utf-8"></script>
+    <script type="text/javascript">
+    var readyForMainLoad
+    if (location.origin.match(/localhost/)) {
+     System.trace = true
+     readyForMainLoad = System.import('capaj/jspm-hot-reloader').then(function(HotReloader){
+       hr = new HotReloader.default('http://localhost:9080')  // chokidar-socket-emitter port
+     })
+    }
+    Promise.resolve(readyForMainLoad).then(() => {
+     System.import('./app.js');
+    })
+    </script>
+  </head>
+  <body>
+    <div id="count"></div>
+    <button id="down">-</button>
+    <button id="up">+</button>
+  </body>
+</html>
