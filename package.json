@@ -12,5 +12,10 @@
   "devDependencies": {
     "chokidar-socket-emitter": "^0.3.0",
     "http-server": "^0.8.5"
+  },
+  "scripts": {
+    "postinstall": "jspm install",
+    "start": "node server",
+    "build": "jspm bundle app --inject --minify"
   }
 }
